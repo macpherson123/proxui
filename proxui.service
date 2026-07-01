@@ -1,0 +1,18 @@
+[Unit]
+Description=Proxmox alternate UI (proxui)
+Documentation=https://localhost:8090/
+After=network-online.target pveproxy.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+Environment=PYTHONUNBUFFERED=1
+WorkingDirectory=/opt/proxui
+ExecStart=/usr/bin/python3 /opt/proxui/px-proxy.py
+Restart=on-failure
+RestartSec=3
+# Needs root to read /etc/pve/local/pve-ssl.* and to run qm/pct/nmcli.
+User=root
+
+[Install]
+WantedBy=multi-user.target
