@@ -1,3 +1,5 @@
+works
+
 # proxui — a fast alternate UI for Proxmox VE
 
 **proxui** is a single-file, self-hosted alternate web interface for [Proxmox VE](https://www.proxmox.com/).
